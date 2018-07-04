@@ -1,0 +1,55 @@
+﻿@using employees.ViewModels
+@model EmployeeListViewModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Employees</h2>
+<a href = "/Employee/Addemployee">Add new employee</a>
+
+@*<p>employee name: @Model.Fname @Model.Lname</p><br/>
+@if (Model.Salary< 100)
+{
+    <span style="background-color:yellow">
+        Employee Salary: @Model.Salary.ToString("c")
+    </span>
+}
+else
+{
+<span style="background-color:red">
+    Employee Salary: @Model.Salary.ToString("c")
+</span>
+
+
+}*@
+@*Hello @Model.UserName
+<br/>
+<div>
+    <b>Employee Details</b><br/>
+    E19*96e name:@Model.EmployeeName<br/>
+    <span style="background-color:@Model.SalaryColor">
+    Employee Salary: @Model.Salary.ToString("c")
+    </span>
+
+
+
+</div>*@
+<body>
+    hello @Model.UserName
+    <br/>
+    <div>
+        <table>
+            <tr>
+                <th>Employee Name</th>
+                <th>Salary</th>
+           </tr>
+                @foreach (EmployeeViewModel item in Model.Employees)
+                {
+                    <tr>
+                        <td>@item.EmployeeName</td>
+                        <td style="background-color:@item.SalaryColor">@item.Salary</td>
+                     </tr>
+                }
+        </table>
+    </div>
+</body>
